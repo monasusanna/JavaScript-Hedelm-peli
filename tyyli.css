@@ -1,0 +1,176 @@
+body {
+    background-image: url("img/tausta.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Unkempt";
+    font-size: 90px;
+    color: rgb(220, 137, 4);
+}
+
+#saldo, #tulosviesti {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: "Karla";
+    background-color: rgb(255, 255, 255);
+    border: rgb(255, 255, 255) solid 5px;
+    border-radius: 5px;
+    width: 350px;
+    font-size: 25px;
+    transition: margin 0.5s ease;
+    height: 60px;
+}
+
+#tulosviesti{
+    display: none;
+}
+
+.tiedotpelaajalle {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 180px;
+    margin-top: 1%;
+
+}
+
+.tiedotpelaajalle.nayta {
+    flex-direction: row;
+}
+
+.tiedotpelaajalle.nayta #saldo {
+    margin: 0; 
+}
+
+.tiedotpelaajalle.nayta #tulosviesti {
+    display: flex; 
+}
+
+
+.rulla img:not(:first-child) {
+    transform: translateY(100%);
+}
+
+.pysahtyy img {
+    animation: none;
+}
+
+#voitonjakokuvat {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.kuvat {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.kirsikat, .paarynat, .rypaleet , .sitruunat, .seiskat, .seiskat3 {
+    width: 10%;
+}
+
+.rullat {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 10px;
+    border: 30px solid #ffbd59;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.689);
+}
+
+.rulla {
+    width: 300px ;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ffbd59;
+}
+
+.rulla img {
+    width: 80%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    transition: transform 0.5s ease;
+    padding: 20px;
+}
+
+.lukitusnappulat {
+    width: 110px;
+    height: 90px;
+    border: none;
+    border-radius: 5px;
+}
+
+.lukitusnappulat img{
+    width: 60%;
+    text-align: center;
+}
+
+.nappulat {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 210px;
+}
+
+.lukitserulla-nappula {
+    border: 3px solid red;
+}
+
+#panosnappula, #kaynnistaKierros {
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    font-family: "Karla";
+    border-radius: 5px;
+    border: none;
+    width: 140px;
+    height: 100px;
+}
+
+#panosnappula {
+    margin-right: auto;
+}
+
+#kaynnistaKierros {
+    margin-left: auto;
+}
+
+#panoskirsikka, #panossitruuna, #panosrypale, #panospaaryna, #panosseiskat, #panoskolmeseiskaa {
+    font-family: "Bungee Spice";
+    margin-top: 2%;
+    font-size: 25px;
+    margin-left: 6%;
+}
+
+.peli {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1800px;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}

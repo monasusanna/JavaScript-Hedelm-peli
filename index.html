@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hedelmäpeli</title>
+    <link rel="stylesheet" href="tyyli.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+    </style>
+</head>
+
+<body>
+    
+    <h1>Hedelmäpeli</h1>
+
+    <div id="voitonjakokuvat">
+        <div class="kuvat">
+            <img class="kirsikat" src="img/kirsikka.png">
+            <img class="kirsikat" src="img/kirsikka.png">
+            <img class="kirsikat" src="img/kirsikka.png">
+            <img class="kirsikat" src="img/kirsikka.png">
+            <div id="panoskirsikka"></div>
+        </div>
+        <div class="kuvat">
+            <img class="paarynat" src="img/paaryna.png">
+            <img class="paarynat" src="img/paaryna.png">
+            <img class="paarynat" src="img/paaryna.png">
+            <img class="paarynat" src="img/paaryna.png">
+            <div id="panospaaryna"></div>
+        </div>
+        <div class="kuvat">
+            <img class="rypaleet" src="img/rypale.png">
+            <img class="rypaleet" src="img/rypale.png">
+            <img class="rypaleet" src="img/rypale.png">
+            <img class="rypaleet" src="img/rypale.png">
+            <div id="panosrypale"></div>
+        </div>
+        <div class="kuvat">
+            <img class="sitruunat" src="img/sitruuna.png">
+            <img class="sitruunat" src="img/sitruuna.png">
+            <img class="sitruunat" src="img/sitruuna.png">
+            <img class="sitruunat" src="img/sitruuna.png">
+            <div id="panossitruuna"></div>
+        </div>
+        <div class="kuvat">
+            <img class="seiskat" src="img/seitsaman.png">
+            <img class="seiskat" src="img/seitsaman.png">
+            <img class="seiskat" src="img/seitsaman.png">
+            <img class="seiskat" src="img/seitsaman.png">
+            <div id="panosseiskat"></div>
+        </div>
+        <div class="kuvat">
+            <img class="seiskat3" src="img/seitsaman.png">
+            <img class="seiskat3" src="img/seitsaman.png">
+            <img class="seiskat3" src="img/seitsaman.png">
+            <div id="panoskolmeseiskaa"></div>
+
+        </div>
+    </div>
+  
+    <div class="tiedotpelaajalle">
+        <p id="saldo">Saldo: <span id="alussarahaa"> 100</span>€</p>
+        <p id="tulosviesti"></p>
+    </div>
+
+    <div class="peli">
+        <button id="panosnappula" onclick="kasvataPanosta()">Panos: <br><span id="valittupanos">1</span>€</button>
+        
+            <div class="container">
+                <div class="rullat">
+                    <div class="rulla" id="rulla1">
+                    <img src="img/paaryna.png" alt="Päärynä">
+                    <img src="img/kirsikka.png" alt="Kirsikka">
+                    <img src="img/sitruuna.png" alt="Sitruuna">
+                    <img src="img/seitsaman.png" alt="Seiska">
+                    <img src="img/rypale.png" alt="Rypäle">
+                </div>
+                <div class="rulla" id="rulla2">
+                    <img src="img/paaryna.png" alt="Päärynä">
+                    <img src="img/kirsikka.png" alt="Kirsikka">
+                    <img src="img/sitruuna.png" alt="Sitruuna">
+                    <img src="img/seitsaman.png" alt="Seiska">
+                    <img src="img/rypale.png" alt="Rypäle">
+                </div>
+                <div class="rulla" id="rulla3">
+                    <img src="img/paaryna.png" alt="Päärynä">
+                    <img src="img/kirsikka.png" alt="Kirsikka">
+                    <img src="img/sitruuna.png" alt="Sitruuna">
+                    <img src="img/seitsaman.png" alt="Seiska">
+                    <img src="img/rypale.png" alt="Rypäle">
+                </div>
+                <div class="rulla" id="rulla4">
+                    <img src="img/paaryna.png" alt="Päärynä">
+                    <img src="img/kirsikka.png" alt="Kirsikka">
+                    <img src="img/sitruuna.png" alt="Sitruuna">
+                    <img src="img/seitsaman.png" alt="Seiska">
+                    <img src="img/rypale.png" alt="Rypäle">
+                </div>
+            </div>
+        </div>
+        <button id="kaynnistaKierros">Pelaa</button>
+    </div>
+
+    <div class="nappulat">
+        <button id="lukitusnappula1" class="lukitusnappulat" onclick="lukitseRulla(1)">
+            <img src="img/lukko.png" alt="lukko">
+        </button>
+        <button id="lukitusnappula2" class="lukitusnappulat" onclick="lukitseRulla(2)">
+            <img src="img/lukko.png" alt="lukko">
+        </button>
+        <button id="lukitusnappula3" class="lukitusnappulat" onclick="lukitseRulla(3)">
+            <img src="img/lukko.png" alt="lukko">
+        </button>
+        <button id="lukitusnappula4" class="lukitusnappulat" onclick="lukitseRulla(4)">
+            <img src="img/lukko.png" alt="lukko">
+        </button>
+    </div>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>
