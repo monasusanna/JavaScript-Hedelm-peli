@@ -3,6 +3,7 @@ const minimipanos = 1;
 let panos = minimipanos;
 let rahaa = 100;
 let lukitutrullat = [false, false, false, false];
+let voittavakierros = false;
 
 const symbolit = [
     'img/paaryna.png',
@@ -34,7 +35,7 @@ function panoksetKuville() {
 }
 
 function kasvataPanosta() {
-    if (panos < maksimipanos && panos < rahaa)  {
+    if (panos < maksimipanos && panos < rahaa) {
         panos++;
     } else {
         panos = minimipanos; 
@@ -44,17 +45,21 @@ function kasvataPanosta() {
 } 
 
 function lukitseRulla(rulla) {
-    lukitutrullat[rulla - 1] = !lukitutrullat[rulla - 1];
+    if (!voittavakierros) {
+        lukitutrullat[rulla - 1] = !lukitutrullat[rulla - 1];
 
-    const rullaElementti = document.getElementById('rulla' + rulla);
-    const lukitusNappula = document.getElementById('lukitusnappula' + rulla);
+        const rullaElementti = document.getElementById('rulla' + rulla);
+        const lukitusNappula = document.getElementById('lukitusnappula' + rulla);
 
-    if (lukitutrullat[rulla - 1]) {
-        rullaElementti.classList.add('lukitserulla'); 
-        lukitusNappula.classList.add('lukitserulla-nappula'); 
+        if (lukitutrullat[rulla - 1]) {
+            rullaElementti.classList.add('lukitserulla'); 
+            lukitusNappula.classList.add('lukitserulla-nappula'); 
+        } else {
+            rullaElementti.classList.remove('lukitserulla');
+            lukitusNappula.classList.remove('lukitserulla-nappula'); 
+        }
     } else {
-        rullaElementti.classList.remove('lukitserulla');
-        lukitusNappula.classList.remove('lukitserulla-nappula'); 
+        document.getElementById('tulosviesti').innerText = "Voitit kierroksen, et voi uusia lukitusta";
     }
 }
 
@@ -71,6 +76,7 @@ function pyorauta() {
         }
     }
     vapautaRullat();
+
 }
 
 function voitot(panos) {
@@ -111,7 +117,7 @@ function voitot(panos) {
         voitto = 5 * panos; 
         tulosviesti = "Voitit " + voitto + " € ";
     }
-
+    voittavakierros = voitto > 0;
     return {voitto, tulosviesti};
 }
 
